@@ -362,4 +362,9 @@ a {
   .forth-page {
     min-height: 50vh;
   }
+  .phone-video video {
+    transform: scale(0.8);
+    bottom: 2rem;
+    left: 2rem;
+  }
 }
