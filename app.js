@@ -45,7 +45,6 @@ const tLHRemove = gsap.timeline({
 tLHRemove.to(".highlight", { color: "rgba(255,255,255,0.4)", stagger: 1 });
 
 //////////////// Page 3
-
 const tlSplit = gsap.timeline({
   scrollTrigger: {
     trigger: ".third-page",
@@ -55,23 +54,26 @@ const tlSplit = gsap.timeline({
     scrub: true,
   },
 });
-tlSplit.fromTo("nav", { opacity: 0 }, { opacity: 1, duration: 1 });
+if (!window.matchMedia("(min-width: 1100px)").matches) {
+  console.log("false");
 
-tlSplit.fromTo(".large-phone", { x: "40%" }, { x: "20%" });
-tlSplit.fromTo(".small-phone", { x: "-40%" }, { x: "-20%" }, "<");
-tlSplit.fromTo(
-  ".product-text-left",
-  { x: 100, opacity: 0 },
-  { x: -60, opacity: 1 },
-  "<"
-);
-tlSplit.fromTo(
-  ".product-text-right",
-  { x: -100, opacity: 0 },
-  { x: 60, opacity: 1 },
-  "<"
-);
+  tlSplit.fromTo("nav", { opacity: 0 }, { opacity: 1, duration: 1 });
 
+  tlSplit.fromTo(".large-phone", { x: "40%" }, { x: "20%" });
+  tlSplit.fromTo(".small-phone", { x: "-40%" }, { x: "-20%" }, "<");
+  tlSplit.fromTo(
+    ".product-text-left",
+    { x: 100, opacity: 0 },
+    { x: -60, opacity: 1 },
+    "<"
+  );
+  tlSplit.fromTo(
+    ".product-text-right",
+    { x: -100, opacity: 0 },
+    { x: 60, opacity: 1 },
+    "<"
+  );
+}
 /////
 const tlSplitPin = gsap.timeline({
   scrollTrigger: {
@@ -82,6 +84,25 @@ const tlSplitPin = gsap.timeline({
     pinSpacing: false,
   },
 });
+/////////////////////////////////////
+// if (window.matchMedia("(max-width: 1100px)").matches) {
+//   console.log("trueee");
+
+//   tlSplit.fromTo(".large-phone", { x: "20%" }, { x: "60%" });
+//   tlSplit.fromTo(".small-phone", { x: "60%" }, { x: "-20%" }, "<");
+//   tlSplit.fromTo(
+//     ".product-text-left",
+//     { x: 0, opacity: 0 },
+//     { x: -20, opacity: 1 },
+//     "<"
+//   );
+//   tlSplit.fromTo(
+//     ".product-text-right",
+//     { x: 0, opacity: 0 },
+//     { x: -60, opacity: 1 },
+//     "<"
+//   );
+// }
 /// Careosel
 
 const swatches = [...document.querySelectorAll(".swatches img")];

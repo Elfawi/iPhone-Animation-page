@@ -116,6 +116,7 @@ a {
   align-items: center;
   min-height: 100vh;
   background: white;
+  position: relative;
 }
 .phone-size {
   font-size: 2rem;
@@ -198,6 +199,7 @@ a {
 }
 .purchase-right img {
   position: absolute;
+  /* width: 100%; */
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0%) scale(0.8);
@@ -282,4 +284,82 @@ a {
   bottom: 1rem;
   transform: scale(0.82);
   border-radius: 2rem;
+}
+/*//////////////////////////////*/
+
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 70%;
+  }
+  nav {
+    padding: 0 5%;
+  }
+  .first-page,
+  .third-page {
+    padding: 0 5%;
+  }
+  .second-text {
+    padding: 5% 20%;
+  }
+  .product-images {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .large-phone {
+    position: relative;
+    transform: translate(0%, 20%) scale(0.7);
+    z-index: 1;
+  }
+  .small-phone {
+    position: relative;
+    z-index: 2;
+    transform: translate(60%, -80%) scale(0.7);
+  }
+  .retina-line {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  .forth-page {
+    min-height: 70vh;
+  }
+  .phone-gallery img {
+    transform: scale(0.8);
+    width: 100%;
+  }
+  .purchase-right img {
+    position: absolute;
+    width: 100%;
+  }
+  .fifth-page {
+    position: relative;
+  }
+  .left-info,
+  .right-info {
+    width: 40%;
+  }
+  .product-info-container {
+    position: absolute;
+    top: 0%;
+    left: 0;
+  }
+  .sixth-page {
+    padding: 10% 5%;
+  }
+  .portrait {
+    height: 50vh;
+  }
+}
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+  .forth-page {
+    min-height: 50vh;
+  }
 }
